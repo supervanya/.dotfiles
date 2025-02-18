@@ -3,7 +3,7 @@
 # Sets up .dotfiles on new machine
 #
 # Usage:
-#   bash <(curl https://raw.githubusercontent.com/hootio/.dotfiles/main/init.sh)
+#   bash <(curl https://raw.githubusercontent.com/supervanya/.dotfiles/main/init.sh)
 
 # set up local .dotfiles repo
 mkdir -p $HOME/github
