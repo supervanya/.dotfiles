@@ -26,3 +26,4 @@ brew "fzf"
 # cask "font-meslo-lg-nerd-font"
 # cask "ghostty"
 # cask "wireshark"
+cask scroll-reverser # this is for using mouse and touchpad and allow scrolling opposite directions
