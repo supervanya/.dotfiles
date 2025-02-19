@@ -1,5 +1,10 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [user]
-  name = Vanya Prokopovich
-  email = vano@umich.edu
-[push]
-  autoSetupRemote = true
+	name = Vanya Prokopovich
+	email = vano@umich.edu
+[core]
+	editor = code --wait
