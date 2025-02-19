@@ -11,7 +11,7 @@ REPO_DIR="$HOME/github/.dotfiles"
 config="git --git-dir=$REPO_DIR --work-tree=$HOME"
 if [ ! -d "$REPO_DIR" ]; then
     echo "Directory does not exist. Cloning repository..."
-    git clone --bare git@github.com:hootio/.dotfiles.git $REPO_DIR
+    git clone --bare git@github.com:supervanya/.dotfiles.git $REPO_DIR
     $config config --local status.showUntrackedFiles no
     $config checkout
 else
