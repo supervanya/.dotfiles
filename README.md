@@ -4,7 +4,8 @@ bash <(curl https://raw.githubusercontent.com/supervanya/.dotfiles/main/init.sh)
 ```
 
 ### Todo:
-[] Can raycast config be autoapplied?
+- [ ] Can raycast config be autoapplied?
+- [ ] iterm2 installed through brew
 
 ### Current issues:
 1. Need to install dev tools in mac os first
