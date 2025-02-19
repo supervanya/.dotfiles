@@ -5,9 +5,6 @@
 # Usage:
 #   bash <(curl https://raw.githubusercontent.com/supervanya/.dotfiles/main/init.sh)
 
-## install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 # set up local .dotfiles repo
 mkdir -p $HOME/github
 REPO_DIR="$HOME/github/.dotfiles"
@@ -31,6 +28,9 @@ brew bundle --file $HOME/Brewfile --no-lock
 brew bundle check
 brew update
 brew upgrade
+
+## install oh-my-zsh without replacing the zshrc
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 
 # reload zsh
 exec zsh
