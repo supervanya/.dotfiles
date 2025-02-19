@@ -1,5 +1,4 @@
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 # brew "asciiquarium"
 # brew "bat"
@@ -26,4 +25,5 @@ brew "fzf"
 # cask "font-meslo-lg-nerd-font"
 # cask "ghostty"
 # cask "wireshark"
+cask "visual-studio-code"
 cask "scroll-reverser" # this is for using mouse and touchpad and allow scrolling opposite directions
