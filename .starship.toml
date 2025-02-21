@@ -1,7 +1,5 @@
 format = """
-$username\
-$hostname\
-$directory\
+$all\
 $fill\
 $time\
 $line_break\
@@ -9,21 +7,30 @@ $status\
 $character\
 """
 
+# Hootie's config
+
+# format = """
+# $username\
+# $hostname\
+# $directory\
+# $fill\
+# $time\
+# $line_break\
+# $status\
+# $character\
+# """
+
 right_format = """$cmd_duration"""
 
 [username]
-show_always = true
+show_always = false
 format = '[$user]($style)'
 style_user = 'italic strikethrough dimmed bright-green'
 
 [hostname]
-ssh_only = false
+ssh_only = true
 format = '[@$hostname:]($style)'
 style = 'italic dimmed bright-green'
-
-[directory]
-truncate_to_repo = false
-style = 'bold bright-cyan'
 
 [fill]
 symbol = '.'
@@ -46,3 +53,101 @@ format = '[$duration]($style)'
 min_time = 0
 show_milliseconds = true
 style = 'bright-yellow'
+
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character] # The name of the module we are configuring is 'character'
+success_symbol = '[❯](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+
+
+
+# MY OLD CONFIG
+
+
+
+[aws]
+symbol = "  "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+truncate_to_repo = false
+style = 'bold bright-cyan'
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[meson]
+symbol = "喝 "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "

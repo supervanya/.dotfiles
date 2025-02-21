@@ -24,6 +24,7 @@ brew "tree"
 brew "zsh-autosuggestions"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
+brew "mise"
 
 ## Cask
 cask "font-hack-nerd-font"
