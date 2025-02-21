@@ -6,8 +6,8 @@
 #   bash <(curl https://raw.githubusercontent.com/supervanya/.dotfiles/main/init.sh)
 
 # set up local .dotfiles repo
-mkdir -p $HOME/github
-REPO_DIR="$HOME/github/.dotfiles"
+mkdir -p $HOME/code
+REPO_DIR="$HOME/code/.dotfiles"
 config="git --git-dir=$REPO_DIR --work-tree=$HOME"
 if [ ! -d "$REPO_DIR" ]; then
     echo "Directory does not exist. Cloning repository..."

@@ -36,21 +36,7 @@ eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.starship.toml
 
 
-# aliases #
-alias config="git --git-dir=$HOME/github/.dotfiles/ --work-tree=$HOME"
-alias l="ls -al --color"
-alias ll=l
-# alias v=nvim
-# alias vi=nvim
-# alias vim=nvim
-# alias grep=rg
-alias ga="git add"
-alias gb="git branch"
-alias gc="git commit"
-alias gd="git diff"
-alias gl="git log"
-alias gp="git push"
-alias gs="git status"
+
 
 
 # attach to tmux session #
@@ -146,7 +132,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	zsh-autosuggestions
+	# zsh-autosuggestions
 	volta
 	yarn
 	)
@@ -193,9 +179,6 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 export VOLTA_FEATURE_PNPM=1
 
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 # ITERM2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
@@ -209,3 +192,24 @@ eval "$(pyenv init -)"
 
 
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# aliases #
+alias config="git --git-dir=$HOME/code/.dotfiles/ --work-tree=$HOME"
+
+alias ls="lsd"
+alias l='ls -l'
+alias l='l'
+alias la='ls -a'
+alias lla='ls -la'
+alias lt='ls --tree'
+# alias v=nvim
+# alias vi=nvim
+# alias vim=nvim
+# alias grep=rg
+alias ga="git add"
+alias gb="git branch"
+alias gc="git commit"
+alias gd="git diff"
+alias gl="git log"
+alias gp="git push"
+alias gs="git status"

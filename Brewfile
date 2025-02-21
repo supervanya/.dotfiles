@@ -1,5 +1,8 @@
+## Tap
 tap "homebrew/bundle"
 tap "homebrew/services"
+
+## Brew
 brew "asciiquarium"
 brew "bat"
 # brew "btop"
@@ -21,9 +24,14 @@ brew "tree"
 brew "zsh-autosuggestions"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
-# cask "font-hack-nerd-font"
+
+## Cask
+cask "font-hack-nerd-font"
 # cask "font-meslo-lg-nerd-font"
 # cask "ghostty"
 # cask "wireshark"
 cask "visual-studio-code"
 cask "scroll-reverser" # this is for using mouse and touchpad and allow scrolling opposite directions
+
+# Condider adding these
+# cask "daisydisk"
