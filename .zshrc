@@ -3,7 +3,7 @@
 
 # plugins #
 # [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
@@ -127,7 +127,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	zsh-autosuggestions
 	yarn
 	)
 
@@ -209,8 +208,12 @@ eval "$(mise activate zsh)"
 # ITERM2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# AutoComplete + syntax
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Plugins: AutoComplete + syntax-highlighting + history search
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+
 
 # PG tools like pg_dump and pg_restore
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
