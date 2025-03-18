@@ -2,10 +2,10 @@
 # FROM HOTIO
 
 # plugins #
-[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+# [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+# source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 
 # configs #
@@ -17,32 +17,27 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt INC_APPEND_HISTORY
 
 # turn on default zsh completions
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 # use case-insensitive if case-sensitive result not found. ex: ls desk<tab>
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 # immediately launches select menu without asking for confirmation. ex: rsync -<tab>
-zstyle ':completion:*' menu yes select
+# zstyle ':completion:*' menu yes select
 # TODO: When using the alias command `config add <tab>` no completion is done.
 #       Make it go through directory files similar to `git add <tab>`
 
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+# ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+# bindkey '^[[A' history-substring-search-up
+# bindkey '^[[B' history-substring-search-down
 
 
-# prompt #
-eval "$(starship init zsh)"
+# starship prompt #
 export STARSHIP_CONFIG=$HOME/.starship.toml
 
-
-
-
-
 # attach to tmux session #
-if [[ -z "$TMUX" ]]; then
-    tmux a || tmux
-fi
+# if [[ -z "$TMUX" ]]; then
+#     tmux a || tmux
+# fi
 
 
 
@@ -132,8 +127,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	# zsh-autosuggestions
-	volta
+	zsh-autosuggestions
 	yarn
 	)
 
@@ -173,25 +167,10 @@ source $ZSH/oh-my-zsh.sh
 # STARSHIP
 eval "$(starship init zsh)"
 
-
-# VOLTA
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-export VOLTA_FEATURE_PNPM=1
-
-# ITERM2
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# AutoComplete + syntax
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
-
-
-export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+# VOLTA {REMOVE IS MISE IS BETTER}
+# export VOLTA_HOME="$HOME/.volta"
+# export PATH="$VOLTA_HOME/bin:$PATH"
+# export VOLTA_FEATURE_PNPM=1
 
 # aliases #
 alias config="git --git-dir=$HOME/code/.dotfiles/ --work-tree=$HOME"
@@ -213,3 +192,31 @@ alias gd="git diff"
 alias gl="git log"
 alias gp="git push"
 alias gs="git status"
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+# bun completions
+[ -s "/Users/ivanprokopovich/.bun/_bun" ] && source "/Users/ivanprokopovich/.bun/_bun"
+
+
+# MISE
+eval "$(mise activate zsh)"
+
+# FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# ITERM2
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# AutoComplete + syntax
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# PG tools like pg_dump and pg_restore
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+# export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+
+# Python
+# PYENV_ROOT="$HOME/.pyenv"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
