@@ -204,6 +204,7 @@ eval "$(mise activate zsh)"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--preview 'bat --color=always {}'"
 
 # ITERM2
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
