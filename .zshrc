@@ -199,8 +199,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [ -s "/Users/ivanprokopovich/.bun/_bun" ] && source "/Users/ivanprokopovich/.bun/_bun"
 
 
-# MISE
-eval "$(mise activate zsh)"
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -224,3 +222,11 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # PYENV_ROOT="$HOME/.pyenv"
 # command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
+
+# Rust
+. "$HOME/.cargo/env"
+
+# MISE
+# export PATH="$HOME/.local/share/mise/shims:$PATH"
+# eval "$(mise activate zsh --shims)" # should be first
+eval "$(mise activate zsh)"

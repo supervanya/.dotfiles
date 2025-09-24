@@ -8,3 +8,6 @@
 	email = vano1993@yahoo.com
 [core]
 	editor = code --wait
+	pager = diff-so-fancy | less --tabs=4 -RF
+[interactive]
+	diffFilter = diff-so-fancy --patch
