@@ -25,6 +25,7 @@ brew "zsh-autosuggestions"
 brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 brew "mise"
+brew "git-delta"
 
 ## Cask
 cask "font-hack-nerd-font"
@@ -36,4 +37,3 @@ cask "scroll-reverser" # this is for using mouse and touchpad and allow scrollin
 
 # Condider adding these
 # cask "daisydisk"
-brew diff-so-fancy
