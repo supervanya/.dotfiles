@@ -230,4 +230,6 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # export PATH="$HOME/.local/share/mise/shims:$PATH"
 # eval "$(mise activate zsh --shims)" # should be first
 eval "$(mise activate zsh)"
+
+# This was added by claude code during installation, I think it might be better to install it through brew or mise
 export PATH="$HOME/.local/bin:$PATH"
