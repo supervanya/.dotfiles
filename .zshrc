@@ -1,13 +1,6 @@
 #####################
 # FROM HOTIO
 
-# plugins #
-# [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
-# source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
-
-
 # configs #
 HISTSIZE=10000
 SAVEHIST=10000
@@ -125,10 +118,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-	git
-	yarn
-	)
+# >>> Disabling since I don't use this for now
+# plugins=(
+# 	git
+# 	)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -166,11 +159,6 @@ source $ZSH/oh-my-zsh.sh
 # STARSHIP
 eval "$(starship init zsh)"
 
-# VOLTA {REMOVE IS MISE IS BETTER}
-# export VOLTA_HOME="$HOME/.volta"
-# export PATH="$VOLTA_HOME/bin:$PATH"
-# export VOLTA_FEATURE_PNPM=1
-
 # aliases #
 alias config="git --git-dir=$HOME/code/.dotfiles/ --work-tree=$HOME"
 
@@ -180,10 +168,7 @@ alias l='l'
 alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
-# alias v=nvim
-# alias vi=nvim
-# alias vim=nvim
-# alias grep=rg
+
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
@@ -191,6 +176,9 @@ alias gd="git diff"
 alias gl="git log"
 alias gp="git push"
 alias gs="git status"
+
+alias cr="cd ~/code/--CR/project-ember-web/"
+# alias crdsb="pnpm dev:sync-branch"
 
 # Bun
 export BUN_INSTALL="$HOME/.bun"
@@ -224,7 +212,7 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # eval "$(pyenv init -)"
 
 # Rust
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
 # MISE
 # export PATH="$HOME/.local/share/mise/shims:$PATH"
