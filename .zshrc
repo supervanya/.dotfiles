@@ -119,9 +119,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # >>> Disabling since I don't use this for now
-# plugins=(
-# 	git
-# 	)
+plugins=(
+	mise
+	)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -177,8 +177,12 @@ alias gl="git log"
 alias gp="git push"
 alias gs="git status"
 
+alias c="clear"
+
 alias cr="cd ~/code/--CR/project-ember-web/"
+alias lunch="cd ~/code/--projects/gather-slack-sync && bun start"
 # alias crdsb="pnpm dev:sync-branch"
+
 
 # Bun
 export BUN_INSTALL="$HOME/.bun"
@@ -214,10 +218,14 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # Rust
 # . "$HOME/.cargo/env"
 
-# MISE
-# export PATH="$HOME/.local/share/mise/shims:$PATH"
-# eval "$(mise activate zsh --shims)" # should be first
-eval "$(mise activate zsh)"
+
 
 # This was added by claude code during installation, I think it might be better to install it through brew or mise
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/Applications/IINA.app/Contents/MacOS/iina-cli:$PATH"
+
+# MISE
+export PATH="$HOME/.local/share/mise/shims:$PATH"
+# https://mise.jdx.dev/dev-tools/shims.html#shims-vs-path
+eval "$(mise activate zsh)"
+# eval "$(mise hook-env -s zsh)"
