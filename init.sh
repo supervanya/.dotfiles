@@ -29,6 +29,9 @@ brew bundle check
 brew update
 brew upgrade
 
+# macos settings (backs up current settings first)
+bash $HOME/macos.sh
+
 ## install oh-my-zsh without replacing the zshrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 
