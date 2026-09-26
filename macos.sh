@@ -16,6 +16,7 @@ DOMAINS=(
     com.apple.AppleMultitouchTrackpad
     com.apple.driver.AppleBluetoothMultitouch.trackpad
     com.apple.menuextra.clock
+    com.apple.universalaccess
 )
 
 # back up current settings
@@ -59,6 +60,18 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeF
 
 # Menu bar clock: show seconds
 defaults write com.apple.menuextra.clock ShowSeconds -bool true
+
+# Accessibility zoom: hold Option and scroll to zoom
+# macOS only allows this write when the terminal app has Full Disk Access
+if defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true 2>/dev/null &&
+    defaults write com.apple.universalaccess closeViewScrollWheelModifiersInt -int 524288 2>/dev/null; then
+    echo "Set scroll-to-zoom with Option."
+else
+    echo "Could not set scroll-to-zoom (macOS protects accessibility settings)."
+    echo "Either grant your terminal Full Disk Access and re-run, or set it by hand:"
+    echo "  Accessibility > Zoom > 'Use scroll gesture with modifier keys to zoom' > Option"
+    open "x-apple.systempreferences:com.apple.preference.universalaccess?Zoom"
+fi
 
 # restart affected apps
 killall Dock Finder SystemUIServer 2>/dev/null
